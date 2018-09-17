@@ -1,0 +1,39 @@
+// ----------------------------------------------------------------------------
+// Sass declarations
+// ----------------------------------------------------------------------------
+$background-color:  #dde4ec;
+
+$title-color:       #011e40;
+$moreinfo-color:    #011e40;
+
+$meter-background:  #ffffff;
+
+// ----------------------------------------------------------------------------
+// Widget-meter styles
+// ----------------------------------------------------------------------------
+.widget-meter {
+
+  background-color: $background-color;
+
+  input.meter {
+    background-color: $meter-background;
+    color: #57b7df;
+  }
+
+  .title {
+    color: $title-color;
+    position: relative;
+    top: -10px;
+  }
+
+  .more-info {
+    color: $moreinfo-color;
+    font-size: 26px;
+    bottom: 10px;
+  }
+
+  .updated-at {
+    color: rgba(0, 0, 0, 0.3);
+  }
+
+}
