@@ -10,7 +10,7 @@ describe EpicParser do
       @object_under_test = EpicParser.new(json_filename)
     end
 
-    # Consider removing this test and no longer exposing hash once your feet are wet
+    # TODO Consider removing this test and no longer exposing hash once your feet are wet
     it 'should parse file into a hash' do
       expect(@object_under_test.parse).to be_kind_of(Hash)
     end
