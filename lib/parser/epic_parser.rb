@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'json'
-require 'data/waiting/waiting_room'
-require 'data/patient/patient'
+require_relative '../data/waiting/waiting_room'
+require_relative '../data/patient/patient'
 
 class EpicParser
   attr_accessor :hash
