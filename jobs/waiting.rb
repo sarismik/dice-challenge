@@ -6,6 +6,5 @@ SCHEDULER.every '1m', first_in: 0 do |job|
   parser = EpicParser.new(json_filename)
   # TODO consider optimization by renaming this job so its clear it applies to the whole dashboard, that way we can re-use parser for all widgets
   waiting_room = parser.extract_waiting_room
-  # TODO replace '8 MINUTES' with value from waiting_room
-  send_event('waiting', {value: waiting_room.number_waiting, moreinfo: '8 MINUTES' })
+  send_event('waiting', {value: waiting_room.number_waiting, moreinfo: waiting_room.longest_wait_time })
 end

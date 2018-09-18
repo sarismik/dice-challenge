@@ -21,7 +21,7 @@ class EpicParser
 
     patients = []
 
-    # TODO look into making keys below into constants
+    # TODO consider turning JSON field names (i.e. 'edInfo' etc) and magic string values (i.e. 'TJUH ED WAITING') into constants
     care_areas = @hash['edInfo']['edDetail']['CareAreas']
     unless care_areas.nil?
       care_areas.each do |care_area|
@@ -30,7 +30,9 @@ class EpicParser
           care_area['Rooms'].each do |waiting_room|
             waiting_room['Beds'].each do |bed|
               bed['Patients'].each do |patient|
-                patients.push(Patient.new(patient['mrn'], patient['arrivalDateTime']))
+                # TODO consider making call to DateTime.parse safer/check for nil or unparseable value
+                # TODO make sure arrivalDateTime and DateTime.now are in the same timezone
+                patients.push(Patient.new(patient['mrn'], DateTime.parse(patient['arrivalDateTime'])))
               end
             end
           end
