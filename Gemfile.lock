@@ -79,6 +79,8 @@ GEM
     tilt (2.0.8)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
+    tzinfo-data (1.2018.5)
+      tzinfo (>= 1.0.0)
 
 PLATFORMS
   ruby
@@ -87,6 +89,7 @@ PLATFORMS
 DEPENDENCIES
   rspec
   smashing
+  tzinfo-data
 
 BUNDLED WITH
    1.16.4
