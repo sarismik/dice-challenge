@@ -1,0 +1,122 @@
+// ----------------------------------------------------------------------------
+// Sass declarations
+// ----------------------------------------------------------------------------
+$background-color:  #dde4ec;
+
+$title-color:       #011e40;
+$moreinfo-color:    #011e40;
+$tick-color:        rgba(0, 0, 0, 0.4);
+
+
+// ----------------------------------------------------------------------------
+// Widget-graph styles
+// ----------------------------------------------------------------------------
+
+.widget-intake {
+  background-color: $background-color;
+  position: relative;
+
+  .rickshaw_graph {
+    position: absolute;
+    left: 34.8px;
+    top: 14px;
+  }
+
+  .title {
+    color: $title-color;
+    position: absolute;
+    z-index: 99;
+    bottom: 85%;
+    text-align: center;
+    width: 100%;
+  }
+
+  .value {
+    position: absolute;
+    z-index: 99;
+    text-align: center;
+    width: 100%;
+    bottom: 3%;
+    font-size: 19px;
+    font-weight: 400;
+  }
+
+  .more-info {
+    color: $moreinfo-color;
+    font-weight: 600;
+    font-size: 14px;
+    margin-top: 0;
+    z-index: 99;
+  }
+
+  .x_tick {
+    position: absolute;
+    bottom: 0;
+    .title {
+      font-size: 14px;
+      color: $tick-color;
+      opacity: 0.5;
+      padding-bottom: 3px;
+    }
+  }
+
+  .y_grid {
+    .tick {
+      stroke-width: 0.5;
+      stroke: grey;
+      opacity: 0.5;
+    }
+  }
+
+  .y_ticks {
+    font-size: 14px;
+    .text {
+      color: black;
+    }
+  }
+
+  .value {
+	 text-transform: none;
+   color: black;
+  }
+
+  .domain {
+    display: none;
+  }
+
+  .rickshaw_legend {
+    position: absolute;
+    left: -121px;
+    bottom: 14px;
+    white-space: nowrap;
+    overflow-x: hidden;
+    font-size: 11px;
+    height: 14px;
+    color: black;
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      text-align: center;
+    }
+
+    ul li {
+      display: inline;
+    }
+
+    .swatch {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      margin-left: 4px;
+    }
+
+    .label {
+      display: inline-block;
+      margin-left: 4px;
+    }
+  }
+
+
+}
