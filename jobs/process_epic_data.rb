@@ -8,19 +8,6 @@ SCHEDULER.every '1m', first_in: 0 do |job|
   waiting_room = parser.extract_waiting_room
   send_event('waiting', {value: waiting_room.number_waiting, moreinfo: waiting_room.longest_wait_time })
 
-  # TODO consider turning magic string values like 'O' and 'U' into constants that are associated with their bar colors
-  # TODO *RESUME HERE* use parser.extract_intake_data to populate data in each series below, should probably introduce a new ruby class that generates intake_series_data
-  intake_series_data = [
-      {
-          name: 'O',
-          color: 'red',
-          data: [{x:1, y: 20}, {x:3, y:28}, {x:7, y:18}]
-      },
-      {
-          name: 'U',
-          color: '#57b7df',
-          data: [{x:5, y:12}]
-      }
-  ]
+  intake_series_data = IntakeGraph.new(parser.extract_intake_data).series
   send_event('intake', { series: intake_series_data })
 end

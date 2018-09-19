@@ -37,7 +37,7 @@ describe IntakeGraph do
           {
               name: 'U',
               color: '#57b7df',
-              data: [{x:1, y:@y_value_for_18r}, {x:3, y:@y_value_for_19r}]
+              data: [{x:1, y:@y_value_for_18r}, {x:3, y:@y_value_for_19r}, {x:7, y:0}]
           }
       ]
     end
