@@ -1,6 +1,6 @@
 require 'date'
 require_relative '../../data/patient/patient'
-
+# TODO decommission this in favor of CareArea (with a name of 'Waiting Room' or whatever Epic sends)
 class WaitingRoom
 
   def initialize(patients = [])
